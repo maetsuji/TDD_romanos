@@ -1,4 +1,5 @@
 #include "romanos.hpp"
+#include <cstring> // For strlen
 
 /*
 Em algarismos romanos, apenas os símbolos I (1), 
@@ -17,22 +18,25 @@ cada número romano. Por exemplo, VIV é inválido e
 não pode ser lido como 10 (5+5).
 */
 
-int romanos_para_decimal(char const * num_romano)
-{ 
-    int decimal = 0;
-    int count = 0;
+int romanos_para_decimal(char const * num_romano) {
+    /*
+    if (strlen(num_romano) == 0 || strlen(num_romano) > 30)
+    {
+        return -2; // Erro: string vazia ou muito longa, -2 apenas para diferenciar dos outros erros
+    }
+    */
+   
+    // Inicializa o número decimal e o contador de algarismos
+    int decimal = 0, count = 0;
 
     // Contadores para V, L e D
-    int V_count, L_count, D_count; 
-    V_count = L_count = D_count = 0;
+    int V_count = 0, L_count = 0, D_count = 0;
 
     // Contadores consecutivos para I, X, C e M
-    int I_consec_count, X_consec_count, C_consec_count, M_consec_count;
-    I_consec_count = X_consec_count = C_consec_count = M_consec_count = 0;
+    int I_consec_count = 0, X_consec_count = 0, C_consec_count = 0, M_consec_count = 0;
 
     // Contadores totais para I, X, C e M
-    int I_count, X_count, C_count, M_count;
-    I_count = X_count = C_count = M_count = 0;
+    int I_count = 0, X_count = 0, C_count = 0, M_count = 0;
 
     while (num_romano[count] != '\0')
     {  

@@ -106,3 +106,23 @@ TEST_CASE( "Numeros romanos - numeros maiores que 3000", "[romanos]" ) {
 
     REQUIRE( romanos_para_decimal("MMMCCCXXXIII") == -1 );
 }
+
+TEST_CASE( "Numeros romanos - string vazia", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("") == -2 );
+}
+
+TEST_CASE( "Numeros romanos - string muito longa", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII") == -2 );
+
+    REQUIRE( romanos_para_decimal("Never gonna give you up, never gonna let you down, never gonna run around and desert you") == -2 );
+}
+    
+TEST_CASE( "Numeros romanos - string com espaços", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("I I") == -1 );
+
+    REQUIRE( romanos_para_decimal("X IV") == -1 );
+
+    REQUIRE( romanos_para_decimal("C D") == -1 );
+
+    REQUIRE( romanos_para_decimal("M M") == -1 );
+}
