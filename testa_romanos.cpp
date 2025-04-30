@@ -63,6 +63,7 @@ TEST_CASE( "Numeros romanos - algarismos misturados", "[romanos]" ) {
 
     REQUIRE( romanos_para_decimal("CMXCIX") == 999 );
 
+    REQUIRE( romanos_para_decimal("MMM") == 3000 );
 }
 
 
@@ -98,4 +99,10 @@ TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("MMMIMM") == -1 );
 
     REQUIRE( romanos_para_decimal("MDXCCCLXXXIX") == -1 );
+}
+
+TEST_CASE( "Numeros romanos - numeros maiores que 3000", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("MMMI") == -1 );
+
+    REQUIRE( romanos_para_decimal("MMMCCCXXXIII") == -1 );
 }
