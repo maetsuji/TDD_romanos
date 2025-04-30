@@ -19,13 +19,13 @@ não pode ser lido como 10 (5+5).
 */
 
 int romanos_para_decimal(char const * num_romano) {
-    /*
+    
     if (strlen(num_romano) == 0 || strlen(num_romano) > 30)
     {
         return -2; // Erro: string vazia ou muito longa, -2 apenas para diferenciar dos outros erros
     }
-    */
-   
+    
+
     // Inicializa o número decimal e o contador de algarismos
     int decimal = 0, count = 0;
 

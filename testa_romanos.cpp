@@ -76,7 +76,7 @@ TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
 
     REQUIRE( romanos_para_decimal("Lorem Ipsum") == -1 );
 
-    REQUIRE( romanos_para_decimal("Fazendo o trabalho 1 de TP2 B) III") == -1 );
+    REQUIRE( romanos_para_decimal("Fazendo o trabalho 1 de TP2 B) III") == -2 ); // Erro: string muito longa
     
     REQUIRE( romanos_para_decimal("i") == -1 );
 
