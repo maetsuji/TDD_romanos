@@ -62,6 +62,7 @@ TEST_CASE( "Numeros romanos - algarismos misturados", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("CDXLIV") == 444 );
 
     REQUIRE( romanos_para_decimal("CMXCIX") == 999 );
+
 }
 
 
@@ -93,4 +94,8 @@ TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("MMMM") == -1 ); 
 
     REQUIRE( romanos_para_decimal("CCCC") == -1 );
+
+    REQUIRE( romanos_para_decimal("MMMIMM") == -1 );
+
+    REQUIRE( romanos_para_decimal("MDXCCCLXXXIX") == -1 );
 }
