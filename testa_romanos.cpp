@@ -50,6 +50,20 @@ TEST_CASE( "Numeros romanos - algarismos subtraídos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("CM") == 900 );
 }
 
+TEST_CASE( "Numeros romanos - algarismos misturados", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("XIV") == 14 );
+    
+    REQUIRE( romanos_para_decimal("XXIX") == 29 );
+
+    REQUIRE( romanos_para_decimal("XLII") == 42 );
+
+    REQUIRE( romanos_para_decimal("XCIX") == 99 );
+
+    REQUIRE( romanos_para_decimal("CDXLIV") == 444 );
+
+    REQUIRE( romanos_para_decimal("CMXCIX") == 999 );
+}
+
 /*
 TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("G") == -1 );
