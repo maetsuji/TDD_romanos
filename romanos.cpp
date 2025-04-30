@@ -201,6 +201,10 @@ int romanos_para_decimal(char const * num_romano)
         }
         count++;
     }
+    if (decimal < 0 || decimal > 3000)
+    {
+        return -1;
+    }
     return decimal; 
 }
  
