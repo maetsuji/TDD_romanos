@@ -23,12 +23,24 @@ int romanos_para_decimal(char const * num_romano)
     int count = 0;
     int V_count, L_count, D_count;
     V_count = L_count = D_count = 0;
+    int I_consec_count, X_consec_count, C_consec_count, M_consec_count;
+    I_consec_count = X_consec_count = C_consec_count = M_consec_count = 0;
     while (num_romano[count] != '\0')
     {  
         switch (num_romano[count])
         {
 
         case 'I':
+            I_consec_count++;
+            if (I_consec_count > 3)
+            {
+                return -1;
+            }
+            else if (num_romano[count + 1] != 'I')
+            {
+                I_consec_count = 0;
+            }
+            
             if (num_romano[count + 1] == 'V' || num_romano[count + 1] == 'X')
             {
                 decimal -= 1;
@@ -37,6 +49,7 @@ int romanos_para_decimal(char const * num_romano)
             {
                 decimal += 1;
             }
+
             break;
 
         case 'V':
@@ -49,6 +62,16 @@ int romanos_para_decimal(char const * num_romano)
             break;
 
         case 'X':
+            X_consec_count++;
+            if (X_consec_count > 3)
+            {
+                return -1;
+            }
+            else if (num_romano[count + 1] != 'X')
+            {
+                X_consec_count = 0;
+            }
+            
             if (num_romano[count + 1] == 'L' || num_romano[count + 1] == 'C')
             {
                 decimal -= 10;
@@ -57,6 +80,7 @@ int romanos_para_decimal(char const * num_romano)
             {
                 decimal += 10;
             }
+
             break;
 
         case 'L':
@@ -69,6 +93,16 @@ int romanos_para_decimal(char const * num_romano)
             break;
 
         case 'C':
+            C_consec_count++;
+            if (C_consec_count > 3)
+            {
+                return -1;
+            }
+            else if (num_romano[count + 1] != 'C')
+            {
+                C_consec_count = 0;
+            }
+
             if (num_romano[count + 1] == 'D' || num_romano[count + 1] == 'M')
             {
                 decimal -= 100;
@@ -77,6 +111,7 @@ int romanos_para_decimal(char const * num_romano)
             {
                 decimal += 100;
             }
+            
             break;
 
         case 'D':
@@ -89,6 +124,16 @@ int romanos_para_decimal(char const * num_romano)
             break;
 
         case 'M':
+            M_consec_count++;
+            if (M_consec_count > 3)
+            {
+                return -1;
+            }
+            else if (num_romano[count + 1] != 'M')
+            {
+                M_consec_count = 0;
+            }
+            
             decimal += 1000;
             break;
         
