@@ -36,6 +36,20 @@ TEST_CASE( "Numeros romanos - algarismos repetidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("MM") == 2000 );
 }
 
+TEST_CASE( "Numeros romanos - algarismos subtraídos", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("IV") == 4 );
+    
+    REQUIRE( romanos_para_decimal("IX") == 9 );
+
+    REQUIRE( romanos_para_decimal("XL") == 40 );
+
+    REQUIRE( romanos_para_decimal("XC") == 90 );
+
+    REQUIRE( romanos_para_decimal("CD") == 400 );
+
+    REQUIRE( romanos_para_decimal("CM") == 900 );
+}
+
 /*
 TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("G") == -1 );
