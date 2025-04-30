@@ -64,9 +64,27 @@ TEST_CASE( "Numeros romanos - algarismos misturados", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("CMXCIX") == 999 );
 }
 
-/*
+
 TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("G") == -1 );
+
+    REQUIRE( romanos_para_decimal("A") == -1 );
+
+    REQUIRE( romanos_para_decimal("Olá Mundo!") == -1 );
+
+    REQUIRE( romanos_para_decimal("Lorem Ipsum") == -1 );
+
+    REQUIRE( romanos_para_decimal("Fazendo o trabalho 1 de TP2 B) III") == -1 );
     
     REQUIRE( romanos_para_decimal("i") == -1 );
-*/
+
+    REQUIRE( romanos_para_decimal("VV") == -1 );
+
+    REQUIRE( romanos_para_decimal("LL") == -1 );
+
+    REQUIRE( romanos_para_decimal("DD") == -1 );
+
+    REQUIRE( romanos_para_decimal("IIII") == -1 );
+
+    REQUIRE( romanos_para_decimal("VV") == -1 );
+}
