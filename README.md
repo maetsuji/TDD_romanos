@@ -8,7 +8,7 @@
 
 2. Navegue até o diretório do projeto:
    ```
-   cd /home/maetsuji/Downloads/TP2_trab1/TDD_romanos
+   cd TDD_romanos
    ```
 
 3. Para compilar e executar os testes, basta executar o comando:
