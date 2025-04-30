@@ -20,14 +20,25 @@ TEST_CASE( "Numeros romanos - algarismos únicos", "[romanos]" ) {
 
 }
 
+TEST_CASE( "Numeros romanos - algarismos repetidos", "[romanos]" ) {
+    REQUIRE( romanos_para_decimal("II") == 2 );
+    
+    REQUIRE( romanos_para_decimal("VV") == 10 );
 
+    REQUIRE( romanos_para_decimal("XX") == 20 );
+
+    REQUIRE( romanos_para_decimal("LL") == 100 );
+
+    REQUIRE( romanos_para_decimal("CC") == 200 );
+
+    REQUIRE( romanos_para_decimal("DD") == 1000 );
+
+    REQUIRE( romanos_para_decimal("MM") == 2000 );
+}
 
 /*
 TEST_CASE( "Numeros romanos - algarismos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("G") == -1 );
     
     REQUIRE( romanos_para_decimal("i") == -1 );
-
-    
-}
- */
+*/
